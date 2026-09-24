@@ -1,0 +1,1691 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Walter Car Care Hub | Premier Auto Bodywork & Refinishing - Nairobi</title>
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            red: '#E50914',
+                            darkred: '#B20710',
+                            dark: '#0B0E14',
+                            card: '#161B22',
+                            border: '#21262D',
+                            silver: '#C0C0C0'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        heading: ['Oswald', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Google Fonts & FontAwesome -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Oswald:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #07090E;
+            color: #E6EDF3;
+        }
+        .font-heading {
+            font-family: 'Oswald', sans-serif;
+        }
+        .glass-header {
+            background: rgba(11, 14, 20, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+        .glass-card {
+            background: rgba(22, 27, 34, 0.7);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .glass-card:hover {
+            border-color: rgba(229, 9, 20, 0.4);
+            box-shadow: 0 10px 30px -10px rgba(229, 9, 20, 0.2);
+        }
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #07090E;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #21262D;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #E50914;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col antialiased selection:bg-brand-red selection:text-white">
+
+    <!-- Top Info Bar -->
+    <div class="bg-gradient-to-r from-brand-darkred via-brand-red to-brand-darkred text-white text-xs py-2 px-4 text-center font-medium tracking-wide flex justify-between items-center z-50">
+        <div class="max-w-7xl mx-auto w-full flex flex-wrap justify-between items-center gap-2">
+            <div class="flex items-center gap-4 mx-auto sm:mx-0">
+                <span><i class="fa-solid fa-location-dot text-yellow-300 mr-1.5"></i> Karen, Nairobi, Kenya</span>
+                <span class="hidden md:inline" id="topbarHours"><i class="fa-regular fa-clock mr-1.5"></i> Mon - Sat: 8:00 AM - 6:00 PM</span>
+            </div>
+            <div class="flex items-center gap-4 mx-auto sm:mx-0">
+                <a href="tel:+254742412994" id="topbarPhone" class="hover:underline flex items-center gap-1"><i class="fa-solid fa-phone text-xs"></i> +254 742 412 994</a>
+                <span class="opacity-50">|</span>
+                <button onclick="openAdminModal()" class="hover:text-yellow-300 transition-colors flex items-center gap-1 font-bold">
+                    <i class="fa-solid fa-user-shield"></i> Walter Workshop CMS
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Navigation Header -->
+    <header class="sticky top-0 z-40 glass-header border-b border-gray-800/80 transition-all duration-300" id="mainHeader">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                
+                <!-- Brand Logo Element -->
+                <a href="#" class="flex items-center gap-3 group">
+                    <img id="headerLogo" src="WhatsApp Image 2026-09-22 at 10.05.32_3.jpeg" 
+                         onerror="this.onerror=null; this.src='https://placehold.co/200x80/161B22/E50914?text=WALTER+CAR+CARE';"
+                         class="h-14 w-auto object-contain rounded-lg transition-transform duration-300 group-hover:scale-105" 
+                         alt="Walter Car Care Hub Logo">
+                    <div class="hidden sm:block">
+                        <span class="font-heading text-xl font-bold tracking-wider text-white block leading-tight">WALTER CAR CARE HUB</span>
+                        <span class="text-[10px] tracking-widest text-brand-red uppercase font-semibold">We Restore. We Refine. We Make It Shine.</span>
+                    </div>
+                </a>
+
+                <!-- Desktop Navigation Links -->
+                <nav class="hidden md:flex items-center gap-8 text-sm font-medium">
+                    <a href="#services" class="text-gray-300 hover:text-brand-red transition-colors">Services</a>
+                    <a href="#gallery" class="text-gray-300 hover:text-brand-red transition-colors">Showcase Gallery</a>
+                    <a href="#about" class="text-gray-300 hover:text-brand-red transition-colors">Why Choose Us</a>
+                    <a href="#careers" class="text-gray-300 hover:text-brand-red transition-colors">Careers / Jobs</a>
+                    <a href="#contact" class="text-gray-300 hover:text-brand-red transition-colors">Contact</a>
+                </nav>
+
+                <!-- Action Buttons -->
+                <div class="hidden md:flex items-center gap-3">
+                    <a href="https://wa.me/254742412994?text=Hello%20Walter%20Car%20Care%20Hub,%20I%20would%20like%20to%20inquire%20about%20your%20services." 
+                       target="_blank" 
+                       class="px-4 py-2.5 rounded-lg bg-green-600 hover:bg-green-700 text-white font-medium text-xs flex items-center gap-2 transition-all shadow-lg shadow-green-900/30">
+                        <i class="fa-brands fa-whatsapp text-base"></i> WhatsApp Us
+                    </a>
+                    <button onclick="openBookingModal()" 
+                            class="px-5 py-2.5 rounded-lg bg-brand-red hover:bg-brand-darkred text-white font-medium text-xs tracking-wider uppercase transition-all shadow-lg shadow-brand-red/30 hover:shadow-brand-red/50 transform hover:-translate-y-0.5">
+                        Book Inspection
+                    </button>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="flex md:hidden items-center gap-2">
+                    <button onclick="toggleMobileMenu()" class="text-gray-300 hover:text-white p-2">
+                        <i class="fa-solid fa-bars text-xl" id="menuIcon"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Drawer Navigation -->
+        <div class="hidden md:hidden bg-brand-card border-b border-gray-800 px-4 pt-2 pb-6 space-y-3" id="mobileMenu">
+            <a href="#services" onclick="toggleMobileMenu()" class="block py-2 text-gray-300 hover:text-brand-red font-medium border-b border-gray-800">Services</a>
+            <a href="#gallery" onclick="toggleMobileMenu()" class="block py-2 text-gray-300 hover:text-brand-red font-medium border-b border-gray-800">Showcase Gallery</a>
+            <a href="#about" onclick="toggleMobileMenu()" class="block py-2 text-gray-300 hover:text-brand-red font-medium border-b border-gray-800">Why Choose Us</a>
+            <a href="#careers" onclick="toggleMobileMenu()" class="block py-2 text-gray-300 hover:text-brand-red font-medium border-b border-gray-800">Careers / Apply for Job</a>
+            <a href="#contact" onclick="toggleMobileMenu()" class="block py-2 text-gray-300 hover:text-brand-red font-medium border-b border-gray-800">Contact</a>
+            
+            <div class="pt-2 flex flex-col gap-2">
+                <button onclick="toggleMobileMenu(); openBookingModal();" class="w-full py-3 rounded-lg bg-brand-red text-white font-medium text-xs tracking-wider uppercase text-center">
+                    Book Inspection
+                </button>
+                <a href="https://wa.me/254742412994?text=Hello%20Walter%20Car%20Care%20Hub,%20I%20would%20like%20to%20inquire%20about%20your%20services." 
+                   target="_blank" 
+                   class="w-full py-3 rounded-lg bg-green-600 text-white font-medium text-xs text-center flex items-center justify-center gap-2">
+                    <i class="fa-brands fa-whatsapp text-base"></i> Chat on WhatsApp
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative min-h-[85vh] flex items-center justify-center overflow-hidden py-16">
+        <div class="absolute inset-0 z-0">
+            <img src="https://images.unsplash.com/photo-1617814076367-b759c7d7e738?auto=format&fit=crop&w=2000&q=80" 
+                 class="w-full h-full object-cover opacity-20 filter brightness-50" alt="Workshop background">
+            <div class="absolute inset-0 bg-gradient-to-t from-[#07090E] via-[#07090E]/80 to-transparent"></div>
+            <div class="absolute inset-0 bg-gradient-to-r from-[#07090E] via-transparent to-[#07090E]"></div>
+        </div>
+
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center pt-4">
+            
+            <div class="mb-8 flex justify-center">
+                <div class="relative group">
+                    <div class="absolute -inset-1 bg-gradient-to-r from-brand-red via-red-600 to-brand-darkred rounded-2xl blur opacity-30 group-hover:opacity-75 transition duration-1000"></div>
+                    <img id="heroLogo" src="WhatsApp Image 2026-09-22 at 10.05.32_3.jpeg" 
+                         onerror="this.onerror=null; this.src='https://placehold.co/400x400/161B22/E50914?text=WALTER+CAR+CARE+HUB';"
+                         class="relative max-h-64 sm:max-h-80 w-auto object-contain mx-auto drop-shadow-2xl transition-transform duration-500 hover:scale-105" 
+                         alt="Walter Car Care Hub Official Badge">
+                </div>
+            </div>
+
+            <span class="inline-block px-4 py-1.5 bg-brand-red/10 border border-brand-red/30 rounded-full text-brand-red font-semibold text-xs md:text-sm tracking-wider uppercase mb-4">
+                <i class="fa-solid fa-shield-halved mr-1.5"></i> Kenya's Premier Automotive Refinishing & Facelift Experts
+            </span>
+
+            <h1 class="font-heading text-4xl sm:text-6xl md:text-7xl font-bold tracking-tight text-white mb-6 uppercase leading-tight">
+                We Restore. We Refine.<br><span class="text-transparent bg-clip-text bg-gradient-to-r from-red-500 via-brand-red to-red-700">We Make It Shine.</span>
+            </h1>
+
+            <p class="max-w-2xl mx-auto text-base sm:text-lg text-gray-400 mb-10 font-normal leading-relaxed">
+                Specialized in professional panel beating, baked booth spray painting, custom body facelifts, ceramic protection, and full collision restorations in Karen, Nairobi.
+            </p>
+
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                <button onclick="openBookingModal()" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-brand-red hover:bg-brand-darkred text-white font-bold text-sm tracking-wider uppercase transition-all shadow-xl shadow-brand-red/30 hover:shadow-brand-red/60 transform hover:-translate-y-1 flex items-center justify-center gap-3">
+                    <i class="fa-solid fa-calendar-check"></i> Schedule Free Quote
+                </button>
+                <a href="#gallery" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-gray-800/80 hover:bg-gray-700 text-white font-bold text-sm tracking-wider uppercase transition-all border border-gray-700 flex items-center justify-center gap-3">
+                    <i class="fa-solid fa-images"></i> View Recent Projects
+                </a>
+            </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto mt-16 pt-8 border-t border-gray-800/80 text-center">
+                <div class="p-3">
+                    <p class="font-heading text-3xl font-bold text-brand-red">100%</p>
+                    <p class="text-xs text-gray-400 uppercase tracking-wider mt-1">Color Match Precision</p>
+                </div>
+                <div class="p-3">
+                    <p class="font-heading text-3xl font-bold text-white">500+</p>
+                    <p class="text-xs text-gray-400 uppercase tracking-wider mt-1">Facelifts & Restorations</p>
+                </div>
+                <div class="p-3">
+                    <p class="font-heading text-3xl font-bold text-brand-red">Baked</p>
+                    <p class="text-xs text-gray-400 uppercase tracking-wider mt-1">Oven Paint Booth</p>
+                </div>
+                <div class="p-3">
+                    <p class="font-heading text-3xl font-bold text-white">5★</p>
+                    <p class="text-xs text-gray-400 uppercase tracking-wider mt-1">Client Satisfaction</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20 bg-brand-dark border-t border-gray-800/50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-xs font-semibold text-brand-red uppercase tracking-widest mb-2">Master Automotive Craftsmanship</h2>
+                <p class="font-heading text-3xl md:text-5xl font-bold text-white uppercase">Our Core Specializations</p>
+                <div class="w-16 h-1 bg-brand-red mx-auto mt-4 rounded-full"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="glass-card p-6 rounded-2xl transition-all duration-300 group">
+                    <div class="w-14 h-14 rounded-xl bg-brand-red/10 border border-brand-red/30 flex items-center justify-center text-brand-red text-2xl mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-hammer"></i>
+                    </div>
+                    <h3 class="font-heading text-xl font-bold text-white uppercase mb-3">Panel Beating & Alignment</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed mb-4">Precision body frame alignment, dent removal, chassis straightening, and expert panel restoration for all vehicle makes.</p>
+                </div>
+
+                <div class="glass-card p-6 rounded-2xl transition-all duration-300 group">
+                    <div class="w-14 h-14 rounded-xl bg-brand-red/10 border border-brand-red/30 flex items-center justify-center text-brand-red text-2xl mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-spray-can"></i>
+                    </div>
+                    <h3 class="font-heading text-xl font-bold text-white uppercase mb-3">Baked Oven Spray Painting</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed mb-4">Dust-free oven baked paint booths using premium automotive 2K paints with computer exact color matching.</p>
+                </div>
+
+                <div class="glass-card p-6 rounded-2xl transition-all duration-300 group">
+                    <div class="w-14 h-14 rounded-xl bg-brand-red/10 border border-brand-red/30 flex items-center justify-center text-brand-red text-2xl mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-car-side"></i>
+                    </div>
+                    <h3 class="font-heading text-xl font-bold text-white uppercase mb-3">Modern Vehicle Facelifts</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed mb-4">Upgrade older model Land Cruisers, Prados, and Mercedes to current year body kits, LED lighting, and bumpers.</p>
+                </div>
+
+                <div class="glass-card p-6 rounded-2xl transition-all duration-300 group">
+                    <div class="w-14 h-14 rounded-xl bg-brand-red/10 border border-brand-red/30 flex items-center justify-center text-brand-red text-2xl mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-gem"></i>
+                    </div>
+                    <h3 class="font-heading text-xl font-bold text-white uppercase mb-3">Ceramic Coating & Detailing</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed mb-4">Multi-stage paint correction, high-gloss clear coat polish, hydrophobic ceramic coatings, and interior detailing.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Showcase Gallery Section -->
+    <section id="gallery" class="py-20 bg-[#07090E] relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
+                <div>
+                    <h2 class="text-xs font-semibold text-brand-red uppercase tracking-widest mb-2">Real Workshop Projects</h2>
+                    <p class="font-heading text-3xl md:text-5xl font-bold text-white uppercase">Workmanship Showcase</p>
+                </div>
+
+                <div class="flex flex-wrap gap-2 mt-6 md:mt-0" id="galleryFilters">
+                    <button onclick="filterGallery('all')" class="filter-btn active px-4 py-2 rounded-lg bg-brand-red text-white text-xs font-semibold tracking-wider uppercase transition-all">All Projects</button>
+                    <button onclick="filterGallery('Panel Beating & Prep')" class="filter-btn px-4 py-2 rounded-lg bg-brand-card hover:bg-gray-800 text-gray-300 text-xs font-semibold tracking-wider uppercase transition-all border border-gray-800">Panel & Prep</button>
+                    <button onclick="filterGallery('Spray Booth & Painting')" class="filter-btn px-4 py-2 rounded-lg bg-brand-card hover:bg-gray-800 text-gray-300 text-xs font-semibold tracking-wider uppercase transition-all border border-gray-800">Booth Painting</button>
+                    <button onclick="filterGallery('Facelifts & Restorations')" class="filter-btn px-4 py-2 rounded-lg bg-brand-card hover:bg-gray-800 text-gray-300 text-xs font-semibold tracking-wider uppercase transition-all border border-gray-800">Facelifts</button>
+                    <button onclick="filterGallery('Gloss Finish & Ceramic')" class="filter-btn px-4 py-2 rounded-lg bg-brand-card hover:bg-gray-800 text-gray-300 text-xs font-semibold tracking-wider uppercase transition-all border border-gray-800">Gloss Finish</button>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6" id="galleryContainer">
+                <!-- Dynamically populated by JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Careers / Join Our Team Section (NEW FEATURE) -->
+    <section id="careers" class="py-20 bg-brand-dark border-t border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <span class="text-xs font-semibold text-brand-red uppercase tracking-widest block mb-2">Work With Us</span>
+                <h2 class="font-heading text-3xl md:text-5xl font-bold text-white uppercase">Apply For a Position</h2>
+                <p class="text-gray-400 text-sm mt-3">Join Nairobi's top team of automotive refinishing experts, panel beaters, spray painters, and detailers.</p>
+                <div class="w-16 h-1 bg-brand-red mx-auto mt-4 rounded-full"></div>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                <!-- Open Roles List -->
+                <div class="space-y-4">
+                    <div class="glass-card p-5 rounded-2xl border border-gray-800">
+                        <div class="flex justify-between items-start">
+                            <div>
+                                <h4 class="font-heading text-lg font-bold text-white uppercase">Senior Panel Beater</h4>
+                                <p class="text-xs text-brand-red mt-0.5">Full-Time • Karen Workshop</p>
+                            </div>
+                            <span class="px-2.5 py-1 bg-green-500/20 text-green-400 rounded text-[10px] font-bold uppercase">Open</span>
+                        </div>
+                        <p class="text-gray-400 text-xs mt-3">Expert in structural chassis alignment, dent pulling, and body panel restoration.</p>
+                    </div>
+
+                    <div class="glass-card p-5 rounded-2xl border border-gray-800">
+                        <div class="flex justify-between items-start">
+                            <div>
+                                <h4 class="font-heading text-lg font-bold text-white uppercase">Spray Paint Specialist</h4>
+                                <p class="text-xs text-brand-red mt-0.5">Full-Time • Karen Workshop</p>
+                            </div>
+                            <span class="px-2.5 py-1 bg-green-500/20 text-green-400 rounded text-[10px] font-bold uppercase">Open</span>
+                        </div>
+                        <p class="text-gray-400 text-xs mt-3">Proficient with 2K acrylic paints, oven booth baking, computer color matching, and clear coating.</p>
+                    </div>
+
+                    <div class="glass-card p-5 rounded-2xl border border-gray-800">
+                        <div class="flex justify-between items-start">
+                            <div>
+                                <h4 class="font-heading text-lg font-bold text-white uppercase">Auto Body Facelift Tech</h4>
+                                <p class="text-xs text-brand-red mt-0.5">Full-Time • Karen Workshop</p>
+                            </div>
+                            <span class="px-2.5 py-1 bg-green-500/20 text-green-400 rounded text-[10px] font-bold uppercase">Open</span>
+                        </div>
+                        <p class="text-gray-400 text-xs mt-3">Specialist in modern SUV body conversions (Land Cruiser, Prado), bumpers, matrix LED lighting.</p>
+                    </div>
+                </div>
+
+                <!-- Job Application Form -->
+                <div class="lg:col-span-2 glass-card p-8 rounded-3xl border border-gray-800">
+                    <h3 class="font-heading text-2xl font-bold text-white uppercase mb-2">Submit Candidate Application</h3>
+                    <p class="text-gray-400 text-xs mb-6">Your details will be transmitted directly into our Admin Portal HR database.</p>
+
+                    <form id="jobAppForm" onsubmit="handleJobApplicationSubmit(event)" class="space-y-4">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-xs font-semibold text-gray-300 uppercase mb-1">Full Name *</label>
+                                <input type="text" id="appFullName" required placeholder="e.g. Joseph Achungo" 
+                                       class="w-full bg-brand-dark border border-gray-800 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-brand-red">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-semibold text-gray-300 uppercase mb-1">Phone Number *</label>
+                                <input type="tel" id="appPhone" required placeholder="07XX XXX XXX" 
+                                       class="w-full bg-brand-dark border border-gray-800 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-brand-red">
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-xs font-semibold text-gray-300 uppercase mb-1">Position Applied For *</label>
+                                <select id="appPosition" required class="w-full bg-brand-dark border border-gray-800 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-brand-red">
+                                    <option value="Panel Beater">Senior Panel Beater</option>
+                                    <option value="Spray Painter">Baked Booth Spray Painter</option>
+                                    <option value="Facelift Technician">Facelift & Bodykit Tech</option>
+                                    <option value="Detailer & Ceramic Polish">Detailer & Ceramic Specialist</option>
+                                    <option value="Workshop Assistant">Workshop Trainee / Assistant</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block text-xs font-semibold text-gray-300 uppercase mb-1">Years of Experience *</label>
+                                <input type="number" id="appExp" min="0" required placeholder="e.g. 5" 
+                                       class="w-full bg-brand-dark border border-gray-800 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-brand-red">
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-semibold text-gray-300 uppercase mb-1">Link to Portfolio / CV File / Google Drive URL</label>
+                            <input type="text" id="appCvUrl" placeholder="https://drive.google.com/your-cv or file link" 
+                                   class="w-full bg-brand-dark border border-gray-800 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-brand-red">
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-semibold text-gray-300 uppercase mb-1">Cover Note & Key Competencies *</label>
+                            <textarea id="appNotes" rows="3" required placeholder="Briefly summarize your experience and skills in auto bodywork or painting..." 
+                                      class="w-full bg-brand-dark border border-gray-800 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-brand-red"></textarea>
+                        </div>
+
+                        <button type="submit" class="w-full py-4 rounded-xl bg-brand-red hover:bg-brand-darkred text-white font-bold text-xs tracking-wider uppercase transition-all shadow-lg shadow-brand-red/30">
+                            <i class="fa-solid fa-paper-plane mr-2"></i> Submit Job Application
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-brand-card/50 border-y border-gray-800/80 relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <span class="text-xs font-semibold text-brand-red uppercase tracking-widest mb-2 block">Unmatched Quality Standard</span>
+                    <h2 class="font-heading text-3xl md:text-5xl font-bold text-white uppercase mb-6 leading-tight">
+                        Why Vehicle Owners Trust <span class="text-brand-red">Walter Car Care Hub</span>
+                    </h2>
+                    <p class="text-gray-300 text-sm leading-relaxed mb-6">
+                        At Walter Car Care Hub in Karen, Nairobi, we treat every vehicle like a masterpiece. Whether you need minor dent correction, full oven spray painting, or a complete body conversion, our certified team delivers perfection.
+                    </p>
+
+                    <div class="space-y-4 mb-8">
+                        <div class="flex items-start gap-4">
+                            <div class="w-8 h-8 rounded-lg bg-brand-red/20 text-brand-red flex items-center justify-center font-bold text-sm shrink-0">
+                                <i class="fa-solid fa-check"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-white font-semibold text-sm">Computerized Paint Formulation</h4>
+                                <p class="text-gray-400 text-xs mt-0.5">Exact color match guarantees seamless panel blending without visible edges.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div class="w-8 h-8 rounded-lg bg-brand-red/20 text-brand-red flex items-center justify-center font-bold text-sm shrink-0">
+                                <i class="fa-solid fa-check"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-white font-semibold text-sm">Dust-Free Oven Curing Booth</h4>
+                                <p class="text-gray-400 text-xs mt-0.5">Ensures factory-grade gloss durability, smooth clear coats, and weather protection.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button onclick="openBookingModal()" class="px-6 py-3.5 rounded-xl bg-brand-red hover:bg-brand-darkred text-white font-bold text-xs tracking-wider uppercase transition-all shadow-lg shadow-brand-red/30">
+                        Request Workshop Inspection
+                    </button>
+                </div>
+
+                <div class="relative">
+                    <div class="absolute -inset-2 bg-brand-red/25 rounded-3xl blur-xl"></div>
+                    <div class="relative bg-brand-dark border border-gray-800 rounded-3xl p-8 space-y-6">
+                        <div class="border-b border-gray-800 pb-6">
+                            <span class="text-xs text-brand-red font-bold uppercase tracking-widest block mb-1">Workshop Guarantee</span>
+                            <p class="font-heading text-2xl font-bold text-white uppercase">Premium Aftercare & Warranty</p>
+                        </div>
+
+                        <div class="grid grid-cols-2 gap-4">
+                            <div class="p-4 bg-brand-card rounded-xl border border-gray-800">
+                                <i class="fa-solid fa-droplet text-brand-red text-xl mb-2"></i>
+                                <h5 class="text-white text-xs font-bold uppercase">UV Clear Coat</h5>
+                                <p class="text-gray-400 text-[11px] mt-1">High-resistance clear coat shield against fading.</p>
+                            </div>
+
+                            <div class="p-4 bg-brand-card rounded-xl border border-gray-800">
+                                <i class="fa-solid fa-wrench text-brand-red text-xl mb-2"></i>
+                                <h5 class="text-white text-xs font-bold uppercase">Genuine Fitment</h5>
+                                <p class="text-gray-400 text-[11px] mt-1">OEM and high-grade aftermarket body parts.</p>
+                            </div>
+                        </div>
+
+                        <div class="p-4 rounded-xl bg-brand-red/10 border border-brand-red/30 flex items-center gap-4">
+                            <i class="fa-solid fa-headset text-brand-red text-3xl"></i>
+                            <div>
+                                <p class="text-white font-bold text-sm">Need Urgent Assistance?</p>
+                                <p class="text-gray-300 text-xs">Call our master technician directly: <a href="tel:+254742412994" id="aboutPhone" class="text-brand-red font-bold underline">+254 742 412 994</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-brand-dark">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                <div class="lg:col-span-1 space-y-6">
+                    <div>
+                        <h2 class="text-xs font-semibold text-brand-red uppercase tracking-widest mb-2">Get In Touch</h2>
+                        <p class="font-heading text-3xl font-bold text-white uppercase">Visit Our Workshop</p>
+                    </div>
+
+                    <div class="space-y-4">
+                        <div class="glass-card p-4 rounded-xl flex items-start gap-4">
+                            <div class="p-3 bg-brand-red/10 rounded-lg text-brand-red text-lg">
+                                <i class="fa-solid fa-location-dot"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-white font-semibold text-sm">Location</h4>
+                                <p class="text-gray-400 text-xs mt-1" id="contactLocation">Karen, Nairobi, Kenya</p>
+                            </div>
+                        </div>
+
+                        <div class="glass-card p-4 rounded-xl flex items-start gap-4">
+                            <div class="p-3 bg-brand-red/10 rounded-lg text-brand-red text-lg">
+                                <i class="fa-solid fa-phone"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-white font-semibold text-sm">Phone Lines</h4>
+                                <p class="text-gray-400 text-xs mt-1"><a href="tel:+254742412994" id="contactPhone1" class="hover:text-brand-red">+254 742 412 994</a></p>
+                                <p class="text-gray-400 text-xs"><a href="tel:+254780047034" id="contactPhone2" class="hover:text-brand-red">+254 780 047 034</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-2 glass-card p-8 rounded-3xl border border-gray-800">
+                    <h3 class="font-heading text-2xl font-bold text-white uppercase mb-2">Send Direct Inquiry</h3>
+                    <p class="text-gray-400 text-xs mb-6">Fill in your car details and preferred service for a fast turnaround estimate.</p>
+
+                    <form id="contactForm" onsubmit="handleFormSubmit(event)" class="space-y-4">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-xs font-semibold text-gray-300 uppercase mb-1">Full Name *</label>
+                                <input type="text" id="formName" required placeholder="John Doe" 
+                                       class="w-full bg-brand-dark border border-gray-800 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-brand-red">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-semibold text-gray-300 uppercase mb-1">Phone Number *</label>
+                                <input type="tel" id="formPhone" required placeholder="07XX XXX XXX" 
+                                       class="w-full bg-brand-dark border border-gray-800 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-brand-red">
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-xs font-semibold text-gray-300 uppercase mb-1">Car Model & Year *</label>
+                                <input type="text" id="formCar" required placeholder="e.g. Toyota Prado TX 2018" 
+                                       class="w-full bg-brand-dark border border-gray-800 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-brand-red">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-semibold text-gray-300 uppercase mb-1">Required Service *</label>
+                                <select id="formService" required class="w-full bg-brand-dark border border-gray-800 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-brand-red">
+                                    <option value="Panel Beating">Panel Beating & Dent Removal</option>
+                                    <option value="Spray Painting">Full Oven Spray Painting</option>
+                                    <option value="Car Facelift">Body Kit Facelift Conversion</option>
+                                    <option value="Ceramic Coating">Ceramic Coating & Polish</option>
+                                    <option value="Accident Repair">Accident Collision Restoration</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-semibold text-gray-300 uppercase mb-1">Additional Notes / Repairs Needed</label>
+                            <textarea id="formNotes" rows="3" placeholder="Describe dents, scratches, or desired upgrades..." 
+                                      class="w-full bg-brand-dark border border-gray-800 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-brand-red"></textarea>
+                        </div>
+
+                        <button type="submit" class="w-full py-4 rounded-xl bg-brand-red hover:bg-brand-darkred text-white font-bold text-xs tracking-wider uppercase transition-all shadow-lg shadow-brand-red/30">
+                            Submit Inquiry
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-brand-dark border-t border-gray-800 pt-12 pb-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 pb-12 border-b border-gray-800">
+                <div class="md:col-span-2">
+                    <div class="flex items-center gap-3 mb-4">
+                        <img id="footerLogo" src="WhatsApp Image 2026-09-22 at 10.05.32_3.jpeg" 
+                             onerror="this.onerror=null; this.src='https://placehold.co/200x80/161B22/E50914?text=WALTER+CAR+CARE';"
+                             class="h-16 w-auto object-contain rounded-lg" 
+                             alt="Walter Car Care Hub Footer Logo">
+                        <div>
+                            <span class="font-heading text-xl font-bold tracking-wider text-white block">WALTER CAR CARE HUB</span>
+                            <span class="text-[10px] tracking-widest text-brand-red uppercase font-semibold">We Restore. We Refine. We Make It Shine.</span>
+                        </div>
+                    </div>
+                    <p class="text-gray-400 text-sm max-w-md">Your trusted partner for premium automotive body refinishing, modern facelifts, collision repairs, and precision paint jobs in Karen, Nairobi, Kenya.</p>
+                </div>
+
+                <div>
+                    <h4 class="font-heading text-lg font-bold text-white uppercase mb-4">Quick Links</h4>
+                    <ul class="space-y-2 text-sm text-gray-400">
+                        <li><a href="#services" class="hover:text-brand-red transition-colors">Our Services</a></li>
+                        <li><a href="#gallery" class="hover:text-brand-red transition-colors">Project Showcase</a></li>
+                        <li><a href="#careers" class="hover:text-brand-red transition-colors">Careers / Jobs</a></li>
+                        <li><a href="#contact" class="hover:text-brand-red transition-colors">Contact Us</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-heading text-lg font-bold text-white uppercase mb-4">Admin Management</h4>
+                    <p class="text-xs text-gray-400 mb-3">Walter Workshop CMS Suite for showcase photos, applications, and records:</p>
+                    <button onclick="openAdminModal()" class="w-full py-2.5 px-4 rounded-xl bg-brand-red hover:bg-brand-darkred text-white text-xs font-semibold uppercase tracking-wider transition-all shadow-md">
+                        <i class="fa-solid fa-user-shield mr-1.5"></i> Open Walter Workshop CMS
+                    </button>
+                </div>
+            </div>
+
+            <div class="pt-8 flex flex-col sm:flex-row justify-between items-center text-xs text-gray-500 gap-4">
+                <p>&copy; 2026 Walter Car Care Hub. All Rights Reserved. Karen, Nairobi, Kenya.</p>
+                <p class="text-gray-400">We Restore. We Refine. We Make It Shine.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Booking Modal -->
+    <div id="bookingModal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-md hidden flex items-center justify-center p-4">
+        <div class="bg-brand-card border border-gray-800 rounded-3xl max-w-md w-full p-6 relative shadow-2xl">
+            <button onclick="closeBookingModal()" class="absolute top-4 right-4 text-gray-400 hover:text-white text-xl">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <h3 class="font-heading text-2xl font-bold text-white uppercase mb-1">Book Inspection</h3>
+            <p class="text-xs text-gray-400 mb-6">Schedule a free workshop consultation in Karen.</p>
+
+            <form onsubmit="handleModalSubmit(event)" class="space-y-4">
+                <div>
+                    <label class="block text-xs font-semibold text-gray-300 uppercase mb-1">Full Name</label>
+                    <input type="text" id="modalName" required class="w-full bg-brand-dark border border-gray-800 rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-brand-red">
+                </div>
+                <div>
+                    <label class="block text-xs font-semibold text-gray-300 uppercase mb-1">Phone Number</label>
+                    <input type="tel" id="modalPhone" required class="w-full bg-brand-dark border border-gray-800 rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-brand-red">
+                </div>
+                <div>
+                    <label class="block text-xs font-semibold text-gray-300 uppercase mb-1">Car Model</label>
+                    <input type="text" id="modalCar" required placeholder="e.g. Prado TX 150" class="w-full bg-brand-dark border border-gray-800 rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-brand-red">
+                </div>
+                <div>
+                    <label class="block text-xs font-semibold text-gray-300 uppercase mb-1">Preferred Service</label>
+                    <select id="modalService" class="w-full bg-brand-dark border border-gray-800 rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-brand-red">
+                        <option value="Panel Beating">Panel Beating & Prep</option>
+                        <option value="Spray Painting">Baked Oven Paint Job</option>
+                        <option value="Facelift">Modern Body Kit Facelift</option>
+                        <option value="Ceramic Gloss">Ceramic Detailing</option>
+                    </select>
+                </div>
+                <button type="submit" class="w-full py-3.5 rounded-xl bg-brand-red hover:bg-brand-darkred text-white font-bold text-xs tracking-wider uppercase transition-all">
+                    Confirm Booking
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Image Lightbox Modal -->
+    <div id="lightboxModal" class="fixed inset-0 z-50 bg-black/90 backdrop-blur-md hidden flex items-center justify-center p-4" onclick="closeLightbox()">
+        <div class="max-w-4xl w-full relative" onclick="event.stopPropagation()">
+            <button onclick="closeLightbox()" class="absolute -top-10 right-0 text-white text-2xl hover:text-brand-red">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <img id="lightboxImg" src="" class="w-full h-auto max-h-[80vh] object-contain rounded-2xl border border-gray-800" alt="Enlarged Project View">
+            <p id="lightboxCaption" class="text-center text-sm text-gray-300 mt-4 font-medium"></p>
+        </div>
+    </div>
+
+    <!-- WALTER WORKSHOP CMS MODAL (ADMIN PORTAL) -->
+    <div id="adminModal" class="fixed inset-0 z-50 bg-black/95 backdrop-blur-md hidden flex items-center justify-center p-2 sm:p-4">
+        <div class="bg-brand-card border border-gray-800 rounded-2xl max-w-6xl w-full relative max-h-[96vh] flex flex-col shadow-2xl overflow-hidden">
+            
+            <!-- CMS Header -->
+            <div class="bg-brand-dark p-4 border-b border-gray-800 flex justify-between items-center shrink-0">
+                <div class="flex items-center gap-3">
+                    <div class="w-9 h-9 rounded-lg bg-brand-red flex items-center justify-center text-white font-bold text-lg">
+                        <i class="fa-solid fa-wrench"></i>
+                    </div>
+                    <div>
+                        <h2 class="font-heading text-xl font-bold text-white uppercase tracking-wider">Walter Workshop CMS</h2>
+                        <p class="text-[10px] text-gray-400">Content & Operational Control Portal</p>
+                    </div>
+                </div>
+
+                <div id="cmsHeaderControls" class="hidden flex items-center gap-3">
+                    <span class="text-xs text-gray-400 hidden sm:inline"><i class="fa-solid fa-circle text-green-500 text-[8px] mr-1"></i> Admin Session Active</span>
+                    <button onclick="logoutAdmin()" class="px-3 py-1.5 rounded bg-red-950/80 hover:bg-red-900 text-xs font-semibold text-red-400 border border-red-800 flex items-center gap-1.5">
+                        <i class="fa-solid fa-right-from-bracket"></i> Logout
+                    </button>
+                    <button onclick="closeAdminModal()" class="text-gray-400 hover:text-white text-xl ml-2">
+                        <i class="fa-solid fa-xmark"></i>
+                    </button>
+                </div>
+
+                <button id="cmsCloseLoginBtn" onclick="closeAdminModal()" class="text-gray-400 hover:text-white text-xl">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+
+            <!-- Login View -->
+            <div id="adminLoginView" class="py-12 px-4 space-y-4 max-w-md mx-auto w-full my-auto">
+                <div class="text-center mb-6">
+                    <div class="w-16 h-16 rounded-2xl bg-brand-red/10 border border-brand-red/30 flex items-center justify-center text-brand-red text-3xl mx-auto mb-4">
+                        <i class="fa-solid fa-lock"></i>
+                    </div>
+                    <h3 class="font-heading text-2xl font-bold text-white uppercase tracking-wider">Authentication Required</h3>
+                    <p class="text-xs text-gray-400 mt-1">Log in to manage showcase photos, job applications, & records</p>
+                </div>
+
+                <form onsubmit="handleAdminLogin(event)" class="space-y-4">
+                    <div>
+                        <label class="block text-xs font-semibold text-gray-300 uppercase mb-1">Username</label>
+                        <input type="text" id="adminUser" required class="w-full bg-brand-dark border border-gray-800 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-brand-red">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-semibold text-gray-300 uppercase mb-1">Password</label>
+                        <input type="password" id="adminPass" required class="w-full bg-brand-dark border border-gray-800 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-brand-red">
+                    </div>
+                    <button type="submit" class="w-full py-3.5 rounded-xl bg-brand-red hover:bg-brand-darkred text-white font-bold text-xs tracking-wider uppercase transition-all shadow-lg shadow-brand-red/30">
+                        Login to Walter Workshop CMS
+                    </button>
+                </form>
+            </div>
+
+            <!-- Dashboard View -->
+            <div id="adminDashboardView" class="hidden flex flex-col h-full overflow-hidden">
+                
+                <!-- CMS Horizontal Menu -->
+                <div class="bg-brand-dark/90 border-b border-gray-800 px-4 py-2.5 flex flex-wrap gap-2 shrink-0 text-xs font-semibold uppercase">
+                    <button onclick="switchCmsTab('galleryManager')" id="cmsNav-galleryManager" class="cms-nav-btn px-3 py-1.5 rounded bg-brand-red text-white flex items-center gap-1.5">
+                        <i class="fa-solid fa-images"></i> Add, Edit, and Delete Showcase Photos
+                    </button>
+                    <button onclick="switchCmsTab('bookings')" id="cmsNav-bookings" class="cms-nav-btn px-3 py-1.5 rounded bg-brand-card hover:bg-gray-800 text-gray-300 border border-gray-800 flex items-center gap-1.5">
+                        <i class="fa-solid fa-envelope-open-text"></i> Bookings & Leads
+                    </button>
+                    <button onclick="switchCmsTab('jobApplications')" id="cmsNav-jobApplications" class="cms-nav-btn px-3 py-1.5 rounded bg-brand-card hover:bg-gray-800 text-gray-300 border border-gray-800 flex items-center gap-1.5">
+                        <i class="fa-solid fa-briefcase"></i> Job Applications
+                    </button>
+                    <button onclick="switchCmsTab('jobCards')" id="cmsNav-jobCards" class="cms-nav-btn px-3 py-1.5 rounded bg-brand-card hover:bg-gray-800 text-gray-300 border border-gray-800 flex items-center gap-1.5">
+                        <i class="fa-solid fa-list-check"></i> Workshop Records & Job Cards
+                    </button>
+                    <button onclick="switchCmsTab('ledger')" id="cmsNav-ledger" class="cms-nav-btn px-3 py-1.5 rounded bg-brand-card hover:bg-gray-800 text-gray-300 border border-gray-800 flex items-center gap-1.5">
+                        <i class="fa-solid fa-calculator"></i> Income & Expense Records
+                    </button>
+                    <button onclick="switchCmsTab('siteSettings')" id="cmsNav-siteSettings" class="cms-nav-btn px-3 py-1.5 rounded bg-brand-card hover:bg-gray-800 text-gray-300 border border-gray-800 flex items-center gap-1.5">
+                        <i class="fa-solid fa-sliders"></i> Logo & Contact Settings
+                    </button>
+                </div>
+
+                <!-- CMS Main Content Container -->
+                <div class="flex-1 overflow-y-auto p-4 space-y-6">
+
+                    <!-- SECTION 1: GALLERY PHOTO MANAGER (MATCHING EXACT REQUEST LAYOUT) -->
+                    <div id="cmsTab-galleryManager" class="cms-tab-content space-y-6">
+                        <div class="flex justify-between items-center border-b border-gray-800 pb-3">
+                            <h3 class="font-heading text-xl font-bold text-white uppercase tracking-wider" id="formHeaderTitle">Gallery Photo Manager</h3>
+                            <span class="text-xs text-gray-400">Manage Website Portfolio Showcase</span>
+                        </div>
+
+                        <!-- Form Section: Edit / Add Showcase Photo -->
+                        <div class="bg-brand-dark p-5 rounded-xl border border-gray-800 space-y-4">
+                            <h4 class="font-heading text-base font-bold text-brand-red uppercase" id="formSubTitle">Edit Showcase Photo / Add Showcase Photo</h4>
+                            
+                            <!-- Input Mode Toggle -->
+                            <div>
+                                <label class="block text-[11px] font-semibold text-gray-400 uppercase mb-1">Select Local Image File or Paste URL</label>
+                                <div class="flex gap-2 mb-2">
+                                    <input type="text" id="cmsImgSource" placeholder="Paste Image URL or select local file filename..." class="flex-1 bg-brand-card border border-gray-800 rounded px-3 py-2 text-xs text-white">
+                                    <label class="px-4 py-2 bg-gray-800 hover:bg-gray-700 text-white text-xs font-semibold rounded cursor-pointer border border-gray-700 flex items-center gap-1">
+                                        <i class="fa-solid fa-upload"></i> Browse Local
+                                        <input type="file" accept="image/*" class="hidden" onchange="handleLocalImageUpload(event)">
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                <div>
+                                    <label class="block text-[11px] font-semibold text-gray-400 uppercase mb-1">Project Title / Vehicle Name *</label>
+                                    <input type="text" id="cmsImgTitle" placeholder="e.g. Mazda Rear Panel Repair & Sanding" class="w-full bg-brand-card border border-gray-800 rounded px-3 py-2 text-xs text-white">
+                                </div>
+                                <div>
+                                    <label class="block text-[11px] font-semibold text-gray-400 uppercase mb-1">Category *</label>
+                                    <select id="cmsImgCategory" class="w-full bg-brand-card border border-gray-800 rounded px-3 py-2 text-xs text-white">
+                                        <option value="Panel Beating & Prep">Panel Beating & Prep</option>
+                                        <option value="Spray Booth & Painting">Spray Booth & Painting</option>
+                                        <option value="Facelifts & Restorations">Facelifts & Restorations</option>
+                                        <option value="Gloss Finish & Ceramic">Gloss Finish & Ceramic</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div>
+                                <label class="block text-[11px] font-semibold text-gray-400 uppercase mb-1">Short Description</label>
+                                <textarea id="cmsImgDesc" rows="2" placeholder="Describe the panel beating, spray painting, or restoration work done..." class="w-full bg-brand-card border border-gray-800 rounded px-3 py-2 text-xs text-white"></textarea>
+                            </div>
+
+                            <!-- Action Buttons -->
+                            <div class="flex items-center gap-3 pt-2">
+                                <button onclick="saveGalleryPhoto()" id="btnSavePhoto" class="px-5 py-2.5 bg-brand-red hover:bg-brand-darkred text-white text-xs font-bold uppercase rounded shadow-md">
+                                    Update Photo
+                                </button>
+                                <button onclick="resetGalleryForm()" id="btnCancelEdit" class="px-5 py-2.5 bg-gray-800 hover:bg-gray-700 text-gray-300 text-xs font-bold uppercase rounded border border-gray-700">
+                                    Cancel Edit
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Existing Gallery Photos Table -->
+                        <div class="bg-brand-dark rounded-xl border border-gray-800 overflow-hidden">
+                            <div class="p-4 border-b border-gray-800">
+                                <h4 class="font-heading text-base font-bold text-white uppercase">Existing Gallery Photos (Edit / Delete)</h4>
+                            </div>
+                            <div class="overflow-x-auto">
+                                <table class="w-full text-left text-xs text-gray-300">
+                                    <thead class="bg-brand-card text-brand-red uppercase font-semibold border-b border-gray-800">
+                                        <tr>
+                                            <th class="p-3">Photo</th>
+                                            <th class="p-3">TITLE</th>
+                                            <th class="p-3">CATEGORY</th>
+                                            <th class="p-3 text-right">ACTIONS</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="cmsGalleryTableBody" class="divide-y divide-gray-800/80">
+                                        <!-- Populated dynamically -->
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 2: BOOKINGS & LEADS -->
+                    <div id="cmsTab-bookings" class="cms-tab-content hidden space-y-4">
+                        <div class="flex justify-between items-center border-b border-gray-800 pb-3">
+                            <h3 class="font-heading text-xl font-bold text-white uppercase tracking-wider">Bookings & Client Leads</h3>
+                            <span class="text-xs text-gray-400">Inquiries Received From Website</span>
+                        </div>
+
+                        <div class="bg-brand-dark rounded-xl border border-gray-800 overflow-hidden">
+                            <div class="overflow-x-auto">
+                                <table class="w-full text-left text-xs text-gray-300">
+                                    <thead class="bg-brand-card text-brand-red uppercase font-semibold border-b border-gray-800">
+                                        <tr>
+                                            <th class="p-3">Date</th>
+                                            <th class="p-3">Client Name</th>
+                                            <th class="p-3">Phone</th>
+                                            <th class="p-3">Car Model</th>
+                                            <th class="p-3">Service Needed</th>
+                                            <th class="p-3">Notes</th>
+                                            <th class="p-3 text-right">Action</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="cmsLeadsTableBody" class="divide-y divide-gray-800/80">
+                                        <!-- Populated dynamically -->
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 3: JOB APPLICATIONS (NEW FEATURE) -->
+                    <div id="cmsTab-jobApplications" class="cms-tab-content hidden space-y-4">
+                        <div class="flex justify-between items-center border-b border-gray-800 pb-3">
+                            <div>
+                                <h3 class="font-heading text-xl font-bold text-white uppercase tracking-wider">Job Applications Portal</h3>
+                                <p class="text-xs text-gray-400">Candidate resumes and job applications submitted through website</p>
+                            </div>
+                            <span class="px-3 py-1 bg-brand-red/20 text-brand-red text-xs font-bold rounded" id="statJobAppsCount">0 Total Applications</span>
+                        </div>
+
+                        <div class="bg-brand-dark rounded-xl border border-gray-800 overflow-hidden">
+                            <div class="overflow-x-auto">
+                                <table class="w-full text-left text-xs text-gray-300">
+                                    <thead class="bg-brand-card text-brand-red uppercase font-semibold border-b border-gray-800">
+                                        <tr>
+                                            <th class="p-3">Date</th>
+                                            <th class="p-3">Applicant Name</th>
+                                            <th class="p-3">Phone</th>
+                                            <th class="p-3">Position</th>
+                                            <th class="p-3">Experience</th>
+                                            <th class="p-3">Portfolio / CV Link</th>
+                                            <th class="p-3">Status</th>
+                                            <th class="p-3 text-right">Actions</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="cmsJobAppsTableBody" class="divide-y divide-gray-800/80">
+                                        <!-- Populated dynamically -->
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 4: WORKSHOP JOB CARDS & VEHICLE RECORDS -->
+                    <div id="cmsTab-jobCards" class="cms-tab-content hidden space-y-4">
+                        <div class="flex justify-between items-center border-b border-gray-800 pb-3">
+                            <div>
+                                <h3 class="font-heading text-xl font-bold text-white uppercase tracking-wider">Workshop Records & Active Job Cards</h3>
+                                <p class="text-xs text-gray-400">Track active repair jobs, assigned technicians, and status</p>
+                            </div>
+                            <button onclick="openAddJobCardModal()" class="px-4 py-2 bg-brand-red hover:bg-brand-darkred text-white text-xs font-bold uppercase rounded shadow">
+                                <i class="fa-solid fa-plus mr-1"></i> Create New Job Card
+                            </button>
+                        </div>
+
+                        <div class="bg-brand-dark rounded-xl border border-gray-800 overflow-hidden">
+                            <div class="overflow-x-auto">
+                                <table class="w-full text-left text-xs text-gray-300">
+                                    <thead class="bg-brand-card text-brand-red uppercase font-semibold border-b border-gray-800">
+                                        <tr>
+                                            <th class="p-3">Job ID</th>
+                                            <th class="p-3">Reg No. / Car Model</th>
+                                            <th class="p-3">Owner Name</th>
+                                            <th class="p-3">Service Scope</th>
+                                            <th class="p-3">Assigned Lead Tech</th>
+                                            <th class="p-3">Repair Stage</th>
+                                            <th class="p-3 text-right">Actions</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="cmsJobCardsTableBody" class="divide-y divide-gray-800/80">
+                                        <!-- Populated dynamically -->
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 5: INCOME & EXPENSE RECORDS LEDGER -->
+                    <div id="cmsTab-ledger" class="cms-tab-content hidden space-y-4">
+                        <div class="flex justify-between items-center border-b border-gray-800 pb-3">
+                            <div>
+                                <h3 class="font-heading text-xl font-bold text-white uppercase tracking-wider">Income & Expenses Ledger</h3>
+                                <p class="text-xs text-gray-400">Track customer payments and workshop supply costs</p>
+                            </div>
+                            <button onclick="openAddLedgerModal()" class="px-4 py-2 bg-green-600 hover:bg-green-700 text-white text-xs font-bold uppercase rounded shadow">
+                                <i class="fa-solid fa-plus mr-1"></i> Record Transaction
+                            </button>
+                        </div>
+
+                        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-4">
+                            <div class="bg-brand-dark p-4 rounded-xl border border-gray-800">
+                                <span class="text-xs text-gray-400 uppercase font-semibold block mb-1">Total Income</span>
+                                <p class="font-heading text-2xl font-bold text-green-400" id="statLedgerIncome">Ksh 0</p>
+                            </div>
+                            <div class="bg-brand-dark p-4 rounded-xl border border-gray-800">
+                                <span class="text-xs text-gray-400 uppercase font-semibold block mb-1">Total Expenses</span>
+                                <p class="font-heading text-2xl font-bold text-red-400" id="statLedgerExpenses">Ksh 0</p>
+                            </div>
+                            <div class="bg-brand-dark p-4 rounded-xl border border-gray-800">
+                                <span class="text-xs text-gray-400 uppercase font-semibold block mb-1">Net Balance</span>
+                                <p class="font-heading text-2xl font-bold text-white" id="statLedgerNet">Ksh 0</p>
+                            </div>
+                        </div>
+
+                        <div class="bg-brand-dark rounded-xl border border-gray-800 overflow-hidden">
+                            <div class="overflow-x-auto">
+                                <table class="w-full text-left text-xs text-gray-300">
+                                    <thead class="bg-brand-card text-brand-red uppercase font-semibold border-b border-gray-800">
+                                        <tr>
+                                            <th class="p-3">Date</th>
+                                            <th class="p-3">Type</th>
+                                            <th class="p-3">Description / Reference</th>
+                                            <th class="p-3">Category</th>
+                                            <th class="p-3">Amount (Ksh)</th>
+                                            <th class="p-3 text-right">Actions</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="cmsLedgerTableBody" class="divide-y divide-gray-800/80">
+                                        <!-- Populated dynamically -->
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 6: LOGO & CONTACT SETTINGS -->
+                    <div id="cmsTab-siteSettings" class="cms-tab-content hidden space-y-6">
+                        <div class="border-b border-gray-800 pb-3">
+                            <h3 class="font-heading text-xl font-bold text-white uppercase tracking-wider">Logo & Business Details Settings</h3>
+                        </div>
+
+                        <div class="bg-brand-dark p-5 rounded-xl border border-gray-800 space-y-4">
+                            <h4 class="text-xs font-bold text-brand-red uppercase tracking-wider border-b border-gray-800 pb-2">Website Branding Logo</h4>
+                            <div>
+                                <label class="block text-[11px] font-semibold text-gray-400 uppercase mb-1">Logo Filename / Image URL</label>
+                                <input type="text" id="cmsEditLogoUrl" class="w-full bg-brand-card border border-gray-800 rounded p-2.5 text-xs text-white">
+                            </div>
+                            <button onclick="saveCmsLogo()" class="px-5 py-2 bg-brand-red text-white text-xs font-bold uppercase rounded">Update Branding Logo</button>
+                        </div>
+
+                        <div class="bg-brand-dark p-5 rounded-xl border border-gray-800 space-y-4">
+                            <h4 class="text-xs font-bold text-brand-red uppercase tracking-wider border-b border-gray-800 pb-2">Contact Details & Working Hours</h4>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                <div>
+                                    <label class="block text-[11px] font-semibold text-gray-400 uppercase mb-1">Primary Phone</label>
+                                    <input type="text" id="cmsEditPhone1" class="w-full bg-brand-card border border-gray-800 rounded p-2.5 text-xs text-white">
+                                </div>
+                                <div>
+                                    <label class="block text-[11px] font-semibold text-gray-400 uppercase mb-1">Secondary Phone</label>
+                                    <input type="text" id="cmsEditPhone2" class="w-full bg-brand-card border border-gray-800 rounded p-2.5 text-xs text-white">
+                                </div>
+                                <div>
+                                    <label class="block text-[11px] font-semibold text-gray-400 uppercase mb-1">Location</label>
+                                    <input type="text" id="cmsEditLocation" class="w-full bg-brand-card border border-gray-800 rounded p-2.5 text-xs text-white">
+                                </div>
+                                <div>
+                                    <label class="block text-[11px] font-semibold text-gray-400 uppercase mb-1">Operating Hours</label>
+                                    <input type="text" id="cmsEditHours" class="w-full bg-brand-card border border-gray-800 rounded p-2.5 text-xs text-white">
+                                </div>
+                            </div>
+                            <button onclick="saveCmsSettings()" class="px-5 py-2 bg-brand-red text-white text-xs font-bold uppercase rounded">Save Contact Details</button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal: Create Job Card Record -->
+    <div id="addJobCardModal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm hidden flex items-center justify-center p-4">
+        <div class="bg-brand-card border border-gray-800 rounded-2xl max-w-md w-full p-6 relative">
+            <button onclick="closeAddJobCardModal()" class="absolute top-4 right-4 text-gray-400 hover:text-white text-xl">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <h3 class="font-heading text-xl font-bold text-white uppercase mb-4">Create Workshop Job Card</h3>
+            <form onsubmit="handleSaveJobCard(event)" class="space-y-3">
+                <div>
+                    <label class="block text-xs font-semibold text-gray-300 uppercase mb-1">Vehicle Reg No. / Model *</label>
+                    <input type="text" id="cardReg" required placeholder="e.g. KDA 888A (Toyota Prado)" class="w-full bg-brand-dark border border-gray-800 rounded px-3 py-2 text-xs text-white">
+                </div>
+                <div>
+                    <label class="block text-xs font-semibold text-gray-300 uppercase mb-1">Owner Name *</label>
+                    <input type="text" id="cardOwner" required placeholder="Client Full Name" class="w-full bg-brand-dark border border-gray-800 rounded px-3 py-2 text-xs text-white">
+                </div>
+                <div>
+                    <label class="block text-xs font-semibold text-gray-300 uppercase mb-1">Service Scope *</label>
+                    <input type="text" id="cardService" required placeholder="e.g. Full Body Panel Beating & Oven Spray" class="w-full bg-brand-dark border border-gray-800 rounded px-3 py-2 text-xs text-white">
+                </div>
+                <div>
+                    <label class="block text-xs font-semibold text-gray-300 uppercase mb-1">Assigned Lead Technician</label>
+                    <input type="text" id="cardTech" placeholder="e.g. Master Walter / Senior Painter" class="w-full bg-brand-dark border border-gray-800 rounded px-3 py-2 text-xs text-white">
+                </div>
+                <div>
+                    <label class="block text-xs font-semibold text-gray-300 uppercase mb-1">Repair Stage</label>
+                    <select id="cardStage" class="w-full bg-brand-dark border border-gray-800 rounded px-3 py-2 text-xs text-white">
+                        <option value="Panel Beating & Prep">Panel Beating & Prep</option>
+                        <option value="In Spray Booth">In Spray Booth Painting</option>
+                        <option value="Bodykit Fitting">Bodykit / Facelift Fitting</option>
+                        <option value="Ceramic Polish">Ceramic Polish & Finishing</option>
+                        <option value="Ready for Delivery">Ready for Delivery</option>
+                    </select>
+                </div>
+                <button type="submit" class="w-full py-3 bg-brand-red text-white font-bold text-xs uppercase rounded">Save Job Card Record</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Modal: Add Ledger Entry -->
+    <div id="addLedgerModal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm hidden flex items-center justify-center p-4">
+        <div class="bg-brand-card border border-gray-800 rounded-2xl max-w-md w-full p-6 relative">
+            <button onclick="closeAddLedgerModal()" class="absolute top-4 right-4 text-gray-400 hover:text-white text-xl">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <h3 class="font-heading text-xl font-bold text-white uppercase mb-4">Record Financial Entry</h3>
+            <form onsubmit="handleSaveLedger(event)" class="space-y-3">
+                <div>
+                    <label class="block text-xs font-semibold text-gray-300 uppercase mb-1">Transaction Type *</label>
+                    <select id="ledgerType" class="w-full bg-brand-dark border border-gray-800 rounded px-3 py-2 text-xs text-white">
+                        <option value="Income">Income (Customer Payment)</option>
+                        <option value="Expense">Expense (Paint, Spare Parts, Utility)</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="block text-xs font-semibold text-gray-300 uppercase mb-1">Description / Ref *</label>
+                    <input type="text" id="ledgerDesc" required placeholder="e.g. Prado Full Painting Payment" class="w-full bg-brand-dark border border-gray-800 rounded px-3 py-2 text-xs text-white">
+                </div>
+                <div>
+                    <label class="block text-xs font-semibold text-gray-300 uppercase mb-1">Category</label>
+                    <input type="text" id="ledgerCategory" placeholder="e.g. Bodywork, Paint Materials, Labor" class="w-full bg-brand-dark border border-gray-800 rounded px-3 py-2 text-xs text-white">
+                </div>
+                <div>
+                    <label class="block text-xs font-semibold text-gray-300 uppercase mb-1">Amount (Ksh) *</label>
+                    <input type="number" id="ledgerAmount" required min="1" class="w-full bg-brand-dark border border-gray-800 rounded px-3 py-2 text-xs text-white">
+                </div>
+                <button type="submit" class="w-full py-3 bg-green-600 text-white font-bold text-xs uppercase rounded">Record Transaction Entry</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- JavaScript Application Engine -->
+    <script>
+        const DEFAULT_LOGO = "WhatsApp Image 2026-09-22 at 10.05.32_3.jpeg";
+        let currentEditIndex = -1; // -1 means adding new photo
+
+        const defaultGallery = [
+            { id: 1, title: "Mazda Rear Panel Repair & Sanding", category: "Panel Beating & Prep", img: "WhatsApp Image 2026-09-22 at 10.05.20_2.jpeg", desc: "Rear panel alignment, dent smoothing, and high-build primer coat." },
+            { id: 2, title: "Prado Matte Black Bodykit Fitting", category: "Panel Beating & Prep", img: "WhatsApp Image 2026-09-22 at 10.05.19 (1)_2.jpeg", desc: "Front fascia assembly with custom matrix LED lights and stealth mesh grill." },
+            { id: 3, title: "Enclosed Spray Booth Painting", category: "Spray Booth & Painting", img: "WhatsApp Image 2026-09-22 at 10.05.19_2.jpeg", desc: "Deep piano black baked oven finish with multi-layer high gloss clear coat." },
+            { id: 4, title: "Lexus Style Facelift Conversion", category: "Facelifts & Restorations", img: "WhatsApp Image 2026-09-22 at 10.05.18 (1)_2.jpeg", desc: "Completed body transformation with pristine shine and showroom polish." },
+            { id: 5, title: "Toyota Prado Finished Gloss Black", category: "Gloss Finish & Ceramic", img: "WhatsApp Image 2026-09-22 at 10.05.18_2.jpeg", desc: "Modern front body kit alignment with integrated daytime running lights." }
+        ];
+
+        document.addEventListener("DOMContentLoaded", function() {
+            initDatabases();
+            initGallery();
+            loadSiteSettings();
+        });
+
+        function initDatabases() {
+            if (!localStorage.getItem("walter_gallery")) {
+                localStorage.setItem("walter_gallery", JSON.stringify(defaultGallery));
+            }
+            if (!localStorage.getItem("walter_job_apps")) {
+                const sampleApps = [
+                    { id: 1, name: "Josphine Achungo", phone: "+254 712 999 000", position: "Detailer & Ceramic Polish", exp: "4 Years", cvUrl: "https://drive.google.com/sample_cv", notes: "Experienced in multi-stage paint correction and ceramic coatings.", status: "Pending", date: "2026-09-22" }
+                ];
+                localStorage.setItem("walter_job_apps", JSON.stringify(sampleApps));
+            }
+            if (!localStorage.getItem("walter_job_cards")) {
+                const sampleCards = [
+                    { id: "JOB-101", reg: "KDA 888A - Prado TX", owner: "David Mutua", service: "Facelift Kit & Full Paint", tech: "Master Walter", stage: "In Spray Booth" }
+                ];
+                localStorage.setItem("walter_job_cards", JSON.stringify(sampleCards));
+            }
+            if (!localStorage.getItem("walter_ledger")) {
+                const sampleLedger = [
+                    { id: 1, date: "2026-09-20", type: "Income", desc: "Toyota Prado Full Oven Painting", category: "Bodywork", amount: 85000 },
+                    { id: 2, date: "2026-09-21", type: "Expense", desc: "Purchased 2K Paint Clear Coat & Hardener", category: "Materials", amount: 18000 }
+                ];
+                localStorage.setItem("walter_ledger", JSON.stringify(sampleLedger));
+            }
+            if (!localStorage.getItem("walter_leads")) {
+                const sampleLeads = [
+                    { id: 1, name: "Peter Kamau", phone: "+254 700 123 456", car: "Prado TX 2017", service: "Car Facelift", notes: "Inquiring about facelift package", date: "2026-09-20" }
+                ];
+                localStorage.setItem("walter_leads", JSON.stringify(sampleLeads));
+            }
+        }
+
+        function getGalleryData() {
+            const stored = localStorage.getItem("walter_gallery");
+            if (stored) {
+                try { return JSON.parse(stored); } catch(e) { return defaultGallery; }
+            }
+            return defaultGallery;
+        }
+
+        function initGallery() {
+            const items = getGalleryData();
+            renderGallery(items);
+        }
+
+        function renderGallery(items) {
+            const container = document.getElementById("galleryContainer");
+            if (!container) return;
+
+            container.innerHTML = "";
+            items.forEach(item => {
+                const card = document.createElement("div");
+                card.className = "glass-card rounded-2xl overflow-hidden group cursor-pointer border border-gray-800 hover:border-brand-red/50 transition-all duration-300";
+                card.onclick = function() { openLightbox(item.img, item.title + " - " + item.desc); };
+
+                card.innerHTML = `
+                    <div class="relative h-64 overflow-hidden bg-brand-dark">
+                        <img src="${item.img}" 
+                             onerror="this.onerror=null; this.src='https://placehold.co/600x400/161B22/E50914?text=Walter+Car+Care';"
+                             class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" 
+                             alt="${item.title}">
+                        <div class="absolute inset-0 bg-gradient-to-t from-brand-dark via-transparent to-transparent opacity-80"></div>
+                        <span class="absolute top-3 left-3 px-3 py-1 bg-brand-red/80 backdrop-blur-sm text-white text-[10px] font-bold uppercase rounded-md tracking-wider">
+                            ${item.category}
+                        </span>
+                    </div>
+                    <div class="p-5">
+                        <h4 class="font-heading text-lg font-bold text-white uppercase group-hover:text-brand-red transition-colors">${item.title}</h4>
+                        <p class="text-gray-400 text-xs mt-1.5 line-clamp-2 leading-relaxed">${item.desc}</p>
+                    </div>
+                `;
+                container.appendChild(card);
+            });
+        }
+
+        function filterGallery(cat) {
+            const buttons = document.querySelectorAll("#galleryFilters .filter-btn");
+            buttons.forEach(btn => {
+                btn.className = "filter-btn px-4 py-2 rounded-lg bg-brand-card hover:bg-gray-800 text-gray-300 text-xs font-semibold tracking-wider uppercase transition-all border border-gray-800";
+            });
+
+            if (event && event.currentTarget) {
+                event.currentTarget.className = "filter-btn active px-4 py-2 rounded-lg bg-brand-red text-white text-xs font-semibold tracking-wider uppercase transition-all";
+            }
+
+            const allItems = getGalleryData();
+            if (cat === 'all') {
+                renderGallery(allItems);
+            } else {
+                renderGallery(allItems.filter(item => item.category === cat));
+            }
+        }
+
+        // Job Application Form Submission Handler
+        function handleJobApplicationSubmit(e) {
+            e.preventDefault();
+            const name = document.getElementById("appFullName").value;
+            const phone = document.getElementById("appPhone").value;
+            const position = document.getElementById("appPosition").value;
+            const exp = document.getElementById("appExp").value + " Years";
+            const cvUrl = document.getElementById("appCvUrl").value || "N/A";
+            const notes = document.getElementById("appNotes").value;
+
+            let apps = JSON.parse(localStorage.getItem("walter_job_apps") || "[]");
+            apps.unshift({
+                id: Date.now(),
+                name,
+                phone,
+                position,
+                exp,
+                cvUrl,
+                notes,
+                status: "Pending",
+                date: new Date().toISOString().split('T')[0]
+            });
+
+            localStorage.setItem("walter_job_apps", JSON.stringify(apps));
+            alert("Thank you, " + name + "! Your job application has been submitted directly to the Walter Car Care Hub Portal.");
+            e.target.reset();
+        }
+
+        // Lightbox & Modal Controls
+        function openLightbox(imgSrc, caption) {
+            const modal = document.getElementById("lightboxModal");
+            const img = document.getElementById("lightboxImg");
+            const cap = document.getElementById("lightboxCaption");
+            if (modal && img) {
+                img.src = imgSrc;
+                if (cap) cap.textContent = caption || "";
+                modal.classList.remove("hidden");
+            }
+        }
+
+        function closeLightbox() { document.getElementById("lightboxModal")?.classList.add("hidden"); }
+        function openBookingModal() { document.getElementById("bookingModal")?.classList.remove("hidden"); }
+        function closeBookingModal() { document.getElementById("bookingModal")?.classList.add("hidden"); }
+        function toggleMobileMenu() { document.getElementById("mobileMenu")?.classList.toggle("hidden"); }
+
+        function handleFormSubmit(e) {
+            e.preventDefault();
+            const name = document.getElementById("formName").value;
+            const phone = document.getElementById("formPhone").value;
+            const car = document.getElementById("formCar").value;
+            const service = document.getElementById("formService").value;
+            const notes = document.getElementById("formNotes").value;
+
+            let leads = JSON.parse(localStorage.getItem("walter_leads") || "[]");
+            leads.unshift({ id: Date.now(), name, phone, car, service, notes, date: new Date().toLocaleDateString() });
+            localStorage.setItem("walter_leads", JSON.stringify(leads));
+
+            const whatsappUrl = `https://wa.me/254742412994?text=${encodeURIComponent(`Hello Walter Car Care Hub, my name is ${name}. I drive a ${car}. I need ${service}. Notes: ${notes}`)}`;
+            alert("Inquiry submitted! Redirecting to WhatsApp...");
+            window.open(whatsappUrl, '_blank');
+            e.target.reset();
+        }
+
+        function handleModalSubmit(e) {
+            e.preventDefault();
+            const name = document.getElementById("modalName").value;
+            const phone = document.getElementById("modalPhone").value;
+            const car = document.getElementById("modalCar").value;
+            const service = document.getElementById("modalService").value;
+
+            let leads = JSON.parse(localStorage.getItem("walter_leads") || "[]");
+            leads.unshift({ id: Date.now(), name, phone, car, service, notes: "Direct Modal Booking", date: new Date().toLocaleDateString() });
+            localStorage.setItem("walter_leads", JSON.stringify(leads));
+
+            alert("Booking request received! We will contact you at " + phone);
+            closeBookingModal();
+            e.target.reset();
+        }
+
+        // --- WALTER WORKSHOP CMS PORTAL ENGINE ---
+        function openAdminModal() { document.getElementById("adminModal")?.classList.remove("hidden"); }
+        function closeAdminModal() { document.getElementById("adminModal")?.classList.add("hidden"); }
+
+        function handleAdminLogin(e) {
+            e.preventDefault();
+            const u = document.getElementById("adminUser").value;
+            const p = document.getElementById("adminPass").value;
+
+            if (u === "admin" && p === "walter123") {
+                document.getElementById("adminLoginView").classList.add("hidden");
+                document.getElementById("cmsCloseLoginBtn").classList.add("hidden");
+                document.getElementById("adminDashboardView").classList.remove("hidden");
+                document.getElementById("cmsHeaderControls").classList.remove("hidden");
+                switchCmsTab('galleryManager');
+            } else {
+                alert("Invalid Credentials. Default access: admin / walter123");
+            }
+        }
+
+        function logoutAdmin() {
+            document.getElementById("adminDashboardView").classList.add("hidden");
+            document.getElementById("cmsHeaderControls").classList.add("hidden");
+            document.getElementById("cmsCloseLoginBtn").classList.remove("hidden");
+            document.getElementById("adminLoginView").classList.remove("hidden");
+        }
+
+        function switchCmsTab(tabName) {
+            document.querySelectorAll(".cms-tab-content").forEach(t => t.classList.add("hidden"));
+            document.querySelectorAll(".cms-nav-btn").forEach(b => {
+                b.classList.remove("bg-brand-red", "text-white");
+                b.classList.add("bg-brand-card", "text-gray-300");
+            });
+
+            document.getElementById(`cmsTab-${tabName}`)?.classList.remove("hidden");
+            const btn = document.getElementById(`cmsNav-${tabName}`);
+            if (btn) {
+                btn.classList.remove("bg-brand-card", "text-gray-300");
+                btn.classList.add("bg-brand-red", "text-white");
+            }
+
+            if (tabName === 'galleryManager') renderCmsGalleryTable();
+            if (tabName === 'bookings') renderCmsLeadsTable();
+            if (tabName === 'jobApplications') renderCmsJobAppsTable();
+            if (tabName === 'jobCards') renderCmsJobCardsTable();
+            if (tabName === 'ledger') renderCmsLedgerTable();
+            if (tabName === 'siteSettings') loadCmsSiteSettings();
+        }
+
+        // --- GALLERY MANAGER LOGIC (ADD / EDIT / DELETE) ---
+        function handleLocalImageUpload(e) {
+            const file = e.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(evt) {
+                    document.getElementById("cmsImgSource").value = evt.target.result;
+                };
+                reader.readAsDataURL(file);
+            }
+        }
+
+        function renderCmsGalleryTable() {
+            const tbody = document.getElementById("cmsGalleryTableBody");
+            if (!tbody) return;
+
+            const gallery = getGalleryData();
+            if (gallery.length === 0) {
+                tbody.innerHTML = `<tr><td colspan="4" class="p-4 text-center text-gray-500">No photos in gallery. Add one using the form above.</td></tr>`;
+                return;
+            }
+
+            tbody.innerHTML = gallery.map((item, idx) => `
+                <tr class="hover:bg-brand-dark/50">
+                    <td class="p-3">
+                        <img src="${item.img}" class="w-12 h-12 object-cover rounded border border-gray-800" onerror="this.src='https://placehold.co/100x100'">
+                    </td>
+                    <td class="p-3">
+                        <p class="font-bold text-white">${item.title}</p>
+                        <p class="text-[10px] text-gray-400 line-clamp-1">${item.desc}</p>
+                    </td>
+                    <td class="p-3">
+                        <span class="px-2 py-1 bg-brand-card border border-gray-800 rounded text-[10px] text-brand-red font-semibold uppercase">${item.category}</span>
+                    </td>
+                    <td class="p-3 text-right">
+                        <div class="flex items-center justify-end gap-2">
+                            <button onclick="startEditGalleryPhoto(${idx})" class="px-2.5 py-1 bg-blue-600 hover:bg-blue-700 text-white rounded text-[11px] font-semibold flex items-center gap-1">
+                                <i class="fa-solid fa-pen-to-square"></i> Edit
+                            </button>
+                            <button onclick="deleteGalleryPhoto(${idx})" class="px-2.5 py-1 bg-red-600 hover:bg-red-700 text-white rounded text-[11px] font-semibold flex items-center gap-1">
+                                <i class="fa-solid fa-trash"></i> Delete
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            `).join('');
+        }
+
+        function startEditGalleryPhoto(idx) {
+            const gallery = getGalleryData();
+            const item = gallery[idx];
+            if (!item) return;
+
+            currentEditIndex = idx;
+            document.getElementById("cmsImgSource").value = item.img;
+            document.getElementById("cmsImgTitle").value = item.title;
+            document.getElementById("cmsImgCategory").value = item.category;
+            document.getElementById("cmsImgDesc").value = item.desc;
+
+            document.getElementById("btnSavePhoto").textContent = "Update Photo";
+            document.getElementById("formSubTitle").textContent = `Editing Showcase Photo: ${item.title}`;
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function resetGalleryForm() {
+            currentEditIndex = -1;
+            document.getElementById("cmsImgSource").value = "";
+            document.getElementById("cmsImgTitle").value = "";
+            document.getElementById("cmsImgCategory").value = "Panel Beating & Prep";
+            document.getElementById("cmsImgDesc").value = "";
+
+            document.getElementById("btnSavePhoto").textContent = "Add Showcase Photo";
+            document.getElementById("formSubTitle").textContent = "Edit Showcase Photo / Add Showcase Photo";
+        }
+
+        function saveGalleryPhoto() {
+            const img = document.getElementById("cmsImgSource").value;
+            const title = document.getElementById("cmsImgTitle").value;
+            const category = document.getElementById("cmsImgCategory").value;
+            const desc = document.getElementById("cmsImgDesc").value;
+
+            if (!img || !title) {
+                alert("Please provide vehicle/project title and select an image file or paste URL.");
+                return;
+            }
+
+            let gallery = getGalleryData();
+
+            if (currentEditIndex >= 0) {
+                // Update Existing Photo
+                gallery[currentEditIndex] = { id: gallery[currentEditIndex].id, title, category, img, desc };
+                alert("Showcase photo updated successfully!");
+            } else {
+                // Add New Photo
+                gallery.unshift({ id: Date.now(), title, category, img, desc });
+                alert("New showcase photo added to your website gallery!");
+            }
+
+            localStorage.setItem("walter_gallery", JSON.stringify(gallery));
+            initGallery();
+            renderCmsGalleryTable();
+            resetGalleryForm();
+        }
+
+        function deleteGalleryPhoto(idx) {
+            if (!confirm("Are you sure you want to delete this photo from the showcase?")) return;
+            let gallery = getGalleryData();
+            gallery.splice(idx, 1);
+            localStorage.setItem("walter_gallery", JSON.stringify(gallery));
+            initGallery();
+            renderCmsGalleryTable();
+            if (currentEditIndex === idx) resetGalleryForm();
+        }
+
+        // --- BOOKINGS & LEADS LOGIC ---
+        function renderCmsLeadsTable() {
+            const tbody = document.getElementById("cmsLeadsTableBody");
+            if (!tbody) return;
+
+            const leads = JSON.parse(localStorage.getItem("walter_leads") || "[]");
+            if (leads.length === 0) {
+                tbody.innerHTML = `<tr><td colspan="7" class="p-4 text-center text-gray-500">No client booking leads logged yet.</td></tr>`;
+                return;
+            }
+
+            tbody.innerHTML = leads.map((l, idx) => `
+                <tr>
+                    <td class="p-3 text-gray-400">${l.date}</td>
+                    <td class="p-3 font-semibold text-white">${l.name}</td>
+                    <td class="p-3 text-brand-red"><a href="tel:${l.phone}">${l.phone}</a></td>
+                    <td class="p-3 font-bold">${l.car}</td>
+                    <td class="p-3"><span class="px-2 py-0.5 bg-gray-800 rounded text-[10px]">${l.service}</span></td>
+                    <td class="p-3 text-gray-400">${l.notes || 'N/A'}</td>
+                    <td class="p-3 text-right">
+                        <button onclick="deleteCmsLead(${idx})" class="text-red-500 hover:text-red-400 p-1"><i class="fa-solid fa-trash"></i></button>
+                    </td>
+                </tr>
+            `).join('');
+        }
+
+        function deleteCmsLead(idx) {
+            if (!confirm("Delete lead record?")) return;
+            let leads = JSON.parse(localStorage.getItem("walter_leads") || "[]");
+            leads.splice(idx, 1);
+            localStorage.setItem("walter_leads", JSON.stringify(leads));
+            renderCmsLeadsTable();
+        }
+
+        // --- JOB APPLICATIONS LOGIC ---
+        function renderCmsJobAppsTable() {
+            const tbody = document.getElementById("cmsJobAppsTableBody");
+            const countLabel = document.getElementById("statJobAppsCount");
+            if (!tbody) return;
+
+            const apps = JSON.parse(localStorage.getItem("walter_job_apps") || "[]");
+            if (countLabel) countLabel.textContent = `${apps.length} Total Applications`;
+
+            if (apps.length === 0) {
+                tbody.innerHTML = `<tr><td colspan="8" class="p-4 text-center text-gray-500">No job applications submitted yet.</td></tr>`;
+                return;
+            }
+
+            tbody.innerHTML = apps.map((a, idx) => `
+                <tr class="hover:bg-brand-dark/50">
+                    <td class="p-3 text-gray-400">${a.date}</td>
+                    <td class="p-3 font-semibold text-white">${a.name}</td>
+                    <td class="p-3 text-brand-red"><a href="tel:${a.phone}">${a.phone}</a></td>
+                    <td class="p-3 font-bold text-yellow-400">${a.position}</td>
+                    <td class="p-3">${a.exp}</td>
+                    <td class="p-3 font-mono text-[11px]">
+                        ${a.cvUrl !== 'N/A' ? `<a href="${a.cvUrl}" target="_blank" class="text-blue-400 underline flex items-center gap-1"><i class="fa-solid fa-file-pdf"></i> View Resume</a>` : 'No CV link'}
+                    </td>
+                    <td class="p-3">
+                        <select onchange="updateAppStatus(${idx}, this.value)" class="bg-brand-card border border-gray-800 rounded px-2 py-1 text-[10px] text-white">
+                            <option value="Pending" ${a.status === 'Pending' ? 'selected' : ''}>Pending</option>
+                            <option value="Interviewed" ${a.status === 'Interviewed' ? 'selected' : ''}>Interviewed</option>
+                            <option value="Hired" ${a.status === 'Hired' ? 'selected' : ''}>Hired</option>
+                            <option value="Rejected" ${a.status === 'Rejected' ? 'selected' : ''}>Rejected</option>
+                        </select>
+                    </td>
+                    <td class="p-3 text-right">
+                        <button onclick="deleteCmsJobApp(${idx})" class="text-red-500 hover:text-red-400 p-1"><i class="fa-solid fa-trash"></i></button>
+                    </td>
+                </tr>
+            `).join('');
+        }
+
+        function updateAppStatus(idx, status) {
+            let apps = JSON.parse(localStorage.getItem("walter_job_apps") || "[]");
+            apps[idx].status = status;
+            localStorage.setItem("walter_job_apps", JSON.stringify(apps));
+        }
+
+        function deleteCmsJobApp(idx) {
+            if (!confirm("Delete candidate application record?")) return;
+            let apps = JSON.parse(localStorage.getItem("walter_job_apps") || "[]");
+            apps.splice(idx, 1);
+            localStorage.setItem("walter_job_apps", JSON.stringify(apps));
+            renderCmsJobAppsTable();
+        }
+
+        // --- WORKSHOP JOB CARDS LOGIC ---
+        function renderCmsJobCardsTable() {
+            const tbody = document.getElementById("cmsJobCardsTableBody");
+            if (!tbody) return;
+
+            const cards = JSON.parse(localStorage.getItem("walter_job_cards") || "[]");
+            if (cards.length === 0) {
+                tbody.innerHTML = `<tr><td colspan="7" class="p-4 text-center text-gray-500">No active repair job cards found.</td></tr>`;
+                return;
+            }
+
+            tbody.innerHTML = cards.map((c, idx) => `
+                <tr>
+                    <td class="p-3 font-mono text-brand-red font-bold">${c.id}</td>
+                    <td class="p-3 font-semibold text-white">${c.reg}</td>
+                    <td class="p-3">${c.owner}</td>
+                    <td class="p-3">${c.service}</td>
+                    <td class="p-3 text-yellow-400">${c.tech || 'Unassigned'}</td>
+                    <td class="p-3"><span class="px-2 py-0.5 bg-brand-card border border-brand-red/40 text-brand-red rounded text-[10px] font-bold uppercase">${c.stage}</span></td>
+                    <td class="p-3 text-right">
+                        <button onclick="deleteCmsJobCard(${idx})" class="text-red-500 hover:text-red-400 p-1"><i class="fa-solid fa-trash"></i></button>
+                    </td>
+                </tr>
+            `).join('');
+        }
+
+        function openAddJobCardModal() { document.getElementById("addJobCardModal")?.classList.remove("hidden"); }
+        function closeAddJobCardModal() { document.getElementById("addJobCardModal")?.classList.add("hidden"); }
+
+        function handleSaveJobCard(e) {
+            e.preventDefault();
+            const reg = document.getElementById("cardReg").value;
+            const owner = document.getElementById("cardOwner").value;
+            const service = document.getElementById("cardService").value;
+            const tech = document.getElementById("cardTech").value;
+            const stage = document.getElementById("cardStage").value;
+
+            let cards = JSON.parse(localStorage.getItem("walter_job_cards") || "[]");
+            cards.unshift({
+                id: "JOB-" + (100 + cards.length + 1),
+                reg, owner, service, tech, stage
+            });
+
+            localStorage.setItem("walter_job_cards", JSON.stringify(cards));
+            closeAddJobCardModal();
+            renderCmsJobCardsTable();
+            e.target.reset();
+        }
+
+        function deleteCmsJobCard(idx) {
+            if (!confirm("Delete workshop job card?")) return;
+            let cards = JSON.parse(localStorage.getItem("walter_job_cards") || "[]");
+            cards.splice(idx, 1);
+            localStorage.setItem("walter_job_cards", JSON.stringify(cards));
+            renderCmsJobCardsTable();
+        }
+
+        // --- INCOME & EXPENSES LEDGER LOGIC ---
+        function renderCmsLedgerTable() {
+            const tbody = document.getElementById("cmsLedgerTableBody");
+            if (!tbody) return;
+
+            const ledger = JSON.parse(localStorage.getItem("walter_ledger") || "[]");
+
+            let totalIncome = 0;
+            let totalExpense = 0;
+
+            ledger.forEach(item => {
+                if (item.type === 'Income') totalIncome += Number(item.amount || 0);
+                if (item.type === 'Expense') totalExpense += Number(item.amount || 0);
+            });
+
+            document.getElementById("statLedgerIncome").textContent = "Ksh " + totalIncome.toLocaleString();
+            document.getElementById("statLedgerExpenses").textContent = "Ksh " + totalExpense.toLocaleString();
+            document.getElementById("statLedgerNet").textContent = "Ksh " + (totalIncome - totalExpense).toLocaleString();
+
+            if (ledger.length === 0) {
+                tbody.innerHTML = `<tr><td colspan="6" class="p-4 text-center text-gray-500">No income or expense entries logged.</td></tr>`;
+                return;
+            }
+
+            tbody.innerHTML = ledger.map((item, idx) => `
+                <tr>
+                    <td class="p-3 text-gray-400">${item.date}</td>
+                    <td class="p-3 font-bold uppercase text-[10px] ${item.type === 'Income' ? 'text-green-400' : 'text-red-400'}">${item.type}</td>
+                    <td class="p-3 font-semibold text-white">${item.desc}</td>
+                    <td class="p-3 text-gray-400">${item.category || 'General'}</td>
+                    <td class="p-3 font-bold ${item.type === 'Income' ? 'text-green-400' : 'text-red-400'}">Ksh ${Number(item.amount).toLocaleString()}</td>
+                    <td class="p-3 text-right">
+                        <button onclick="deleteCmsLedger(${idx})" class="text-red-500 hover:text-red-400 p-1"><i class="fa-solid fa-trash"></i></button>
+                    </td>
+                </tr>
+            `).join('');
+        }
+
+        function openAddLedgerModal() { document.getElementById("addLedgerModal")?.classList.remove("hidden"); }
+        function closeAddLedgerModal() { document.getElementById("addLedgerModal")?.classList.add("hidden"); }
+
+        function handleSaveLedger(e) {
+            e.preventDefault();
+            const type = document.getElementById("ledgerType").value;
+            const desc = document.getElementById("ledgerDesc").value;
+            const category = document.getElementById("ledgerCategory").value;
+            const amount = document.getElementById("ledgerAmount").value;
+
+            let ledger = JSON.parse(localStorage.getItem("walter_ledger") || "[]");
+            ledger.unshift({
+                id: Date.now(),
+                date: new Date().toISOString().split('T')[0],
+                type, desc, category, amount
+            });
+
+            localStorage.setItem("walter_ledger", JSON.stringify(ledger));
+            closeAddLedgerModal();
+            renderCmsLedgerTable();
+            e.target.reset();
+        }
+
+        function deleteCmsLedger(idx) {
+            if (!confirm("Delete ledger transaction?")) return;
+            let ledger = JSON.parse(localStorage.getItem("walter_ledger") || "[]");
+            ledger.splice(idx, 1);
+            localStorage.setItem("walter_ledger", JSON.stringify(ledger));
+            renderCmsLedgerTable();
+        }
+
+        // --- SITE SETTINGS & LOGO ---
+        function loadCmsSiteSettings() {
+            const settings = JSON.parse(localStorage.getItem("walter_settings") || "{}");
+            if (document.getElementById("cmsEditLogoUrl")) document.getElementById("cmsEditLogoUrl").value = settings.logoUrl || DEFAULT_LOGO;
+            if (document.getElementById("cmsEditPhone1")) document.getElementById("cmsEditPhone1").value = settings.phone1 || "+254 742 412 994";
+            if (document.getElementById("cmsEditPhone2")) document.getElementById("cmsEditPhone2").value = settings.phone2 || "+254 780 047 034";
+            if (document.getElementById("cmsEditLocation")) document.getElementById("cmsEditLocation").value = settings.location || "Karen, Nairobi, Kenya";
+            if (document.getElementById("cmsEditHours")) document.getElementById("cmsEditHours").value = settings.hours || "Mon - Sat: 8:00 AM - 6:00 PM";
+        }
+
+        function saveCmsLogo() {
+            const logoUrl = document.getElementById("cmsEditLogoUrl").value;
+            let settings = JSON.parse(localStorage.getItem("walter_settings") || "{}");
+            settings.logoUrl = logoUrl;
+            localStorage.setItem("walter_settings", JSON.stringify(settings));
+
+            applyLogoToDom(logoUrl);
+            alert("Branding logo updated across header, hero section, and footer!");
+        }
+
+        function saveCmsSettings() {
+            let settings = JSON.parse(localStorage.getItem("walter_settings") || "{}");
+            settings.phone1 = document.getElementById("cmsEditPhone1").value;
+            settings.phone2 = document.getElementById("cmsEditPhone2").value;
+            settings.location = document.getElementById("cmsEditLocation").value;
+            settings.hours = document.getElementById("cmsEditHours").value;
+            localStorage.setItem("walter_settings", JSON.stringify(settings));
+
+            loadSiteSettings();
+            alert("Contact details and hours updated!");
+        }
+
+        function applyLogoToDom(url) {
+            ["headerLogo", "heroLogo", "footerLogo"].forEach(id => {
+                const el = document.getElementById(id);
+                if (el) el.src = url;
+            });
+        }
+
+        function loadSiteSettings() {
+            const settings = JSON.parse(localStorage.getItem("walter_settings") || "{}");
+            applyLogoToDom(settings.logoUrl || DEFAULT_LOGO);
+            if (document.getElementById("topbarHours")) document.getElementById("topbarHours").innerHTML = `<i class="fa-regular fa-clock mr-1.5"></i> ${settings.hours || "Mon - Sat: 8:00 AM - 6:00 PM"}`;
+            if (document.getElementById("topbarPhone")) document.getElementById("topbarPhone").innerHTML = `<i class="fa-solid fa-phone text-xs"></i> ${settings.phone1 || "+254 742 412 994"}`;
+            if (document.getElementById("contactLocation")) document.getElementById("contactLocation").textContent = settings.location || "Karen, Nairobi, Kenya";
+        }
+    </script>
+</body>
+</html>
